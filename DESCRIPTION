@@ -1,11 +1,15 @@
 Package: UBVSR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Update Bayesian Variable Selection Regression
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: person("Yumo", "Yang", email = "yangym_58@tamu.edu", role = c("aut", "cre"))
+Maintainer: Yumo Yang <yangym_58@tamu.edu>
+Description: The package includes the methods to update the Cholesky decompositions of the cross 
+             product of the design matrix when adding or removing a variate of obeservations, which 
+             is expected to be faster than computing from scratch. It also includes the initial version
+             of Bayesian Variable Selection Regression using MCMC combined with the Cholesky undates.
+License: GPL (>= 3)
+Imports: stats
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.2.3
