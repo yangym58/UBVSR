@@ -51,7 +51,11 @@ res <- MT_IT(Y, X, m, a, delta, niter)
 ```
 Evaluate the accuracy:
 ```{r eval = False}
-calculate_accu(data$beta, res$gammamat)
+accuvec <- rep(0,10)
+for(i in 1:10){
+res <- MT_IT(Y, X, m, a, delta, niter)
+accuvec[i] <- calculate_accu(data$beta, res$gammamat)}
+mean(accuvec)
 ```
 
 ## Learn more
