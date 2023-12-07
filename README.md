@@ -14,18 +14,18 @@ library(UBVSR)
 
 ### Input and output Specification
 Function updatechol_add
-- rtri is the right triangular matrix satisfies $rtri^trtri=X^tX+\sigma^{-2}I$ for current $X$.
+- rtri is the right triangular matrix $R$ satisfies $R^tR=X^tX+\sigma^{-2}I$ for current $X$.
 - sigma2 is $\sigma^2$.
 - X is the design matrix(each column is a variable).
 - indvec is a vector indicates which variable is contained in current X.
 - newv is the variable to be added.
-- output: The right triangular matrix satisfies $rtri^trtri=X'^tX'+\sigma^{-2}I$ after adding new variable.
+- output: The right triangular matrix satisfies $R'^tR'=X'^tX'+\sigma^{-2}I$ after adding new variable.
 
 Function updatechol_remove
-- rtri is the right triangular matrix satisfies $rtri^trtri=X^tX+\sigma^{-2}I$ for current $X$.
+- rtri is the right triangular matrix $R$ satisfies $R^tR=X^tX+\sigma^{-2}I$ for current $X$.
 - indvec is a vector indicates which variable is contained in current X.
 - newv is the variable to be removed.
-- output: The right triangular matrix satisfies $rtri^trtri=X'^tX'+\sigma^{-2}I$ after removing a variable.
+- output: The right triangular matrix satisfies $R'^tR'=X'^tX'+\sigma^{-2}I$ after removing a variable.
 
 Function MT_IT 
 output:
