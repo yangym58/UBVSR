@@ -20,6 +20,7 @@ The new triangular matrix
 Update Cholesky Decomposition when removing a covariate
 }
 \examples{
-rtri <- matrix(c(1,0,1,1), nrow = 2)
-updatechol_remove(rtri, c(1,2), 1)
+X <- matrix(rnorm(1000), ncol=20)
+rtri <- chol(crossprod(X))
+rtriprime <- updatechol_remove(rtri, 1:20, 5)
 }

@@ -8,8 +8,9 @@
 #' @export
 #'
 #' @examples
-#' rtri <- matrix(c(1,0,1,1), nrow = 2)
-#' updatechol_remove(rtri, c(1,2), 1)
+#' X <- matrix(rnorm(1000), ncol=20)
+#' rtri <- chol(crossprod(X))
+#' rtriprime <- updatechol_remove(rtri, 1:20, 5)
 updatechol_remove <- function(rtri, indvec, oldv)
 {  remove_ind <- which(indvec == oldv)
 indvec <- indvec[-remove_ind]
