@@ -43,10 +43,10 @@ Run the model:
 ```{r eval = False}
 Y <- data$Y
 X <- data$X
-m <- 20
-a <- 2
+m <- 10
+a <- 1
 delta <- 0.5
-niter <- 1500
+niter <- 1000
 res <- MT_IT(Y, X, m, a, delta, niter)
 ```
 Evaluate the accuracy:
