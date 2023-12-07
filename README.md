@@ -28,9 +28,9 @@ Function updatechol_remove
 - output: The right triangular matrix satisfies $R'^tR'=X'^tX'+\sigma^{-2}I$ after removing a variable.
 
 Function MT_IT 
-output:
-gammamat: Each row is a vector indicating whether the variable has an effect in an iteration of MT_IT.
-sigmavec: Each element is the hyperparameter in prior of beta in an iteration of MT_IT.
+- output:
+- gammamat: Each row is a vector indicating whether the variable has an effect in an iteration of MT_IT.
+- sigmavec: Each element is the hyperparameter in prior of beta in an iteration of MT_IT.
 wmat: Each element is the weight in an iteration of MT_IT.
 
 ### Example
@@ -55,8 +55,9 @@ calculate_accu(data$beta, res$gammamat)
 ```
 
 ## Learn more
-[BVSR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6788783/)
-[MT_IT](https://arxiv.org/abs/2304.06251)
+For more information about BVSR:[BVSR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6788783/).
+
+For more information about MT_IT:[MT_IT](https://arxiv.org/abs/2304.06251).
 
 
 
