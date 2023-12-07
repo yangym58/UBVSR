@@ -31,7 +31,7 @@ Function MT_IT
 - output:
 - gammamat: Each row is a vector indicating whether the variable has an effect in an iteration of MT_IT.
 - sigmavec: Each element is the hyperparameter in prior of beta in an iteration of MT_IT.
-wmat: Each element is the weight in an iteration of MT_IT.
+- wmat: Each element is the weight in an iteration of MT_IT.
 
 ### Example
 Using the function generate_data to generate data: the probability to have effect for each variable is 0.05. Heritability is 0.4. 1000 observations with 200 total variable.
