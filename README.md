@@ -49,7 +49,7 @@ delta <- 0.5
 niter <- 1500
 res <- MT_IT(Y, X, m, a, delta, niter)
 ```
-Evaluate the occuracy:
+Evaluate the accuracy:
 ```{r eval = False}
 calculate_accu(data$beta, res$gammamat)
 ```
