@@ -1,0 +1,93 @@
+---
+title: "An introduction to UBVSR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{A introduction to UBVSR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Bayesian variable selection regression (BVSR) is able to jointly analyze genome-wide genetic data to produce the posterior probability of association for each covariate and estimate hyperparameters such as heritability and number of covariates that have nonzero effects. But the slow computation via MCMC hampered its wide-spread usage. In this package, we incorporate the Multiple-try importance tempering(MT-IT) method into BVSR and combined with Cholesky decomposition updating method when evaluating the posteriors, which is much faster than computing from scratch in certain cases.
+
+One can implement the BVSR combined with Cholesky decomposition or use the Cholesky decomposition methods saperately. Therefore, this vignette focuses on these two functionalities and make readers more familiar with the package.
+
+## Installation
+One can install this package form github:
+```{r eval=F}
+devtools::install_github("yangym58/UBVSR")
+```
+
+## Quick examples
+First we load the UBVSR package:
+```{r setup}
+library(UBVSR)
+```
+
+### Usage of Cholesky updating
+We know that in high-dimensional settings, computing a Cholesky decomposition for a square matrix is difficult and time-consuming. Specifically in BVSR, we need to evaluate 
+We need to evaluate 
+$$
+     \alpha_g( (\gamma, \sigma), (\gamma', \sigma') )= g \left(  \frac{\pi(\gamma', \sigma') \; q((\gamma, \sigma) \mid (\gamma', \sigma') ) }{\pi(\gamma, \sigma) \; q( (\gamma', \sigma')\mid (\gamma, \sigma))} \right)
+$$
+And when calculating $\pi(\gamma', \sigma')$ and $\pi(\gamma, \sigma)$, having the Cholesky decomposition of $X'X+\sigma^2I$ will make it easy to calculate $(X'X+\sigma^2I)^{-1}$ and solve the linear equation $(X'X+\sigma^2I)\beta=c$. So updating the Cholesky of $X'X+\sigma^2I$ when adding or removing one column of X is faster than computing from scratch.
+
+```{r echo=F, warning=F}
+library(microbenchmark)
+```
+
+```{r}
+# Updating from removing 199th column of X(500 x 200)
+X <- matrix(rnorm(100000), ncol=200)
+rtri <- chol(crossprod(X))
+microbenchmark(updatechol_remove(rtri, 1:200, 199), chol(crossprod(X[,-199])))
+```
+```{r}
+# Updating from adding 1000th column of X(2500 x 1000)
+X <- matrix(rnorm(2500000), ncol=1000)
+rtri <- chol(crossprod(X[,-1000])+diag(1,nrow = 999,ncol = 999))
+microbenchmark(updatechol_add(rtri,1,X, 1:999, 1000), chol(crossprod(X)+diag(1,nrow=1000,ncol=1000)),times = 10)
+```
+We find that the updating method is faster than directly computing the Cholesky.
+
+### Usage of MT_IT
+
+First using the function generate_data to generate data: the probability to have effect for each variable is 0.05. Heritability is 0.4. 1000 observations with 200 total variable.
+
+```{r}
+# Generate data
+data <- generate_data(0.05, 0.4, 1000, 200)
+```
+
+Then we run the model. We specify that number of trials in each iteration is 10, and the probability that propose from changing variance, adding one variate and removing one variate is a/m, (1-a/m)/2 and (1-a/m)/2. The delta in the random walk proposal of changing variance is 0.5. We run 1000 times iteration:
+
+```{r}
+Y <- data$Y
+X <- data$X
+m <- 10
+a <- 1
+delta <- 0.5
+niter <- 1000
+res <- MT_IT(Y, X, m, a, delta, niter)
+```
+
+Then we evaluate the accuracy:
+```{r}
+accuvec <- rep(0,10)
+for(i in 1:10){
+res <- MT_IT(Y, X, m, a, delta, niter)
+accuvec[i] <- calculate_accu(data$beta, res$gammamat)}
+mean(accuvec)
+```
+
+
+
+
+
+
