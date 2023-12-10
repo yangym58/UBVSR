@@ -59,6 +59,12 @@ mean(accuvec)
 ```
 
 ## Learn more
+
+For more details about this package, you can open the vignette in HTML.
+```{r eval = False}
+browseVignettes(package="UBVSR")
+```
+
 For more information about BVSR:[BVSR](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6788783/).
 
 For more information about MT_IT:[MT_IT](https://arxiv.org/abs/2304.06251).
