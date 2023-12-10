@@ -7,16 +7,20 @@
 generate_data(p, h, n, M)
 }
 \arguments{
-\item{p}{The probability whether a covariate has effect}
+\item{p}{A number gives the probability whether a covariate has effect}
 
-\item{h}{The heritability}
+\item{h}{A number represents the heritability}
 
-\item{n}{Number of observations}
+\item{n}{A scalar: number of observations}
 
-\item{M}{Total number of covariate}
+\item{M}{A scalar: total number of covariates}
 }
 \value{
-Y, X, a vector of coefficients, random effect
+A list with the elements
+\item{Y}{A n x 1 vector of outcomes}
+\item{X}{A n x M matrix of the whole design matrix}
+\item{beta}{A M x 1 vector for the true coefficients of each covariates}
+\item{epsilon}{A n x 1 vector of random effects}
 }
 \description{
 Generate data

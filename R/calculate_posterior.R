@@ -1,13 +1,13 @@
 #' Calculate posterior
 #'
-#' @param rtri A right triangular matrix
-#' @param X Design matrix
-#' @param Y A vector of outcome
-#' @param s The vector of variance in each column of X
-#' @param gam A vector indicates whether has effect
-#' @param sigma2 The variance
+#' @param rtri A p x p right triangular matrix
+#' @param X A n x M Design matrix
+#' @param Y A n x 1 vector of outcome
+#' @param s A M x 1 vector for variance in each column of X
+#' @param gam A M x 1 vector indicates whether covariate has effect
+#' @param sigma2 A value represents the variance
 #'
-#' @return The posterior in log form
+#' @return A value represents the posterior in log form
 #' @export
 #'
 #' @examples

@@ -1,14 +1,17 @@
 #' The MT_IT methods
 #'
-#' @param Y A vector of outcome
-#' @param X The design matrix
-#' @param m The number of trials
-#' @param a a/m the probability in first case proposal
-#' @param delta The variance in first case proposal
-#' @param niter Number of iterations
-#' @param g The balance function
+#' @param Y A n x 1 vector of outcome
+#' @param X The n x M design matrix
+#' @param m A value represents the number of trials in each iteration
+#' @param a A number: a/m is the probability of purposing from first case
+#' @param delta A value represents the variance in first case proposal
+#' @param niter A value represents the number of iterations
+#' @param g A value indicates the balance function
 #'
-#' @return The MCMC output
+#' @return A list with the elements
+#' \item{gammamat}{A (niter+1) x M matrix contains gamma in each iteration}
+#' \item{sigma2vec}{A (niter+1) x 1 vector contains sigma2 in each iteration}
+#' \item{wmat}{A (niter+1) x 1 vector contains the weight in each iteration}
 #' @export
 #'
 #' @examples

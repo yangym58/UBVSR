@@ -1,12 +1,12 @@
 #' Update Cholesky decomposition when adding a covariate
 #'
-#' @param rtri A right triangular matrix
+#' @param rtri A p x p right triangular matrix
 #' @param sigma2 A number: the variance of coefficient
-#' @param X The design matrix
-#' @param indvec A vector indicates covariate
+#' @param X The n x M design matrix
+#' @param indvec A p x 1 vector indicates covariate
 #' @param newv A number indicates new covariate
 #'
-#' @return The updated right triangular matrix
+#' @return The updated p x p right triangular matrix
 #' @export
 #'
 #' @examples

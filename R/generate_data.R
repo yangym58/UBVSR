@@ -1,11 +1,15 @@
 #' Generate data
 #'
-#' @param p The probability whether a covariate has effect
-#' @param h The heritability
-#' @param n Number of observations
-#' @param M Total number of covariate
+#' @param p A number gives the probability whether a covariate has effect
+#' @param h A number represents the heritability
+#' @param n A scalar: number of observations
+#' @param M A scalar: total number of covariates
 #'
-#' @return Y, X, a vector of coefficients, random effect
+#' @return A list with the elements
+#' \item{Y}{A n x 1 vector of outcomes}
+#' \item{X}{A n x M matrix of the whole design matrix}
+#' \item{beta}{A M x 1 vector for the true coefficients of each covariates}
+#' \item{epsilon}{A n x 1 vector of random effects}
 #' @export
 #'
 #' @examples generate_data(0.05, 0.5, 1000, 200)

@@ -7,12 +7,14 @@
 given_rotation(a, b)
 }
 \arguments{
-\item{a}{A number in the first entry}
+\item{a}{A number(scalar) in the first entry}
 
-\item{b}{A number in the second entry}
+\item{b}{A number(scalar) in the second entry}
 }
 \value{
-The values in given rotation matrix
+A list with the elements
+\item{c}{The value of c in th given rotation matrix.}
+\item{s}{The value of s in th given rotation matrix.}
 }
 \description{
 Calculate values in given rotation matrix

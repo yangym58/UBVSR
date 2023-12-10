@@ -7,22 +7,25 @@
 MT_IT(Y, X, m, a, delta, niter, g = 1)
 }
 \arguments{
-\item{Y}{A vector of outcome}
+\item{Y}{A n x 1 vector of outcome}
 
-\item{X}{The design matrix}
+\item{X}{The n x M design matrix}
 
-\item{m}{The number of trials}
+\item{m}{A value represents the number of trials in each iteration}
 
-\item{a}{a/m the probability in first case proposal}
+\item{a}{A number: a/m is the probability of purposing from first case}
 
-\item{delta}{The variance in first case proposal}
+\item{delta}{A value represents the variance in first case proposal}
 
-\item{niter}{Number of iterations}
+\item{niter}{A value represents the number of iterations}
 
-\item{g}{The balance function}
+\item{g}{A value indicates the balance function}
 }
 \value{
-The MCMC output
+A list with the elements
+\item{gammamat}{A (niter+1) x M matrix contains gamma in each iteration}
+\item{sigma2vec}{A (niter+1) x 1 vector contains sigma2 in each iteration}
+\item{wmat}{A (niter+1) x 1 vector contains the weight in each iteration}
 }
 \description{
 The MT_IT methods

@@ -1,20 +1,16 @@
 #' Calculate alphag
-#'
-#' @param rtri A right triangular matrix
-#' @param X The design matrix
-#' @param Y A vector of outcome
-#' @param s A vector of variance of each column of X
-#' @param indvec A vector indicates covariate
-#' @param post The former posterior
-#' @param gam A vector indicates whether has effect
-#' @param gammaprime The proposal gammar
-#' @param sigma2 The variance
-#' @param sigma2prime Th proposal variance
+#' @inheritParams calculate_posterior
+#' @param indvec A p x 1 vector indicates covariate that have effects
+#' @param post A value represents the former posterior
+#' @param gammaprime A M x 1 represents the proposal gamma
+#' @param sigma2prime A value represents proposal variance
 #' @param indic A number indicates which case
 #' @param indv A number indicates which variate is changed
 #' @param g A number indicates which balance function
 #'
-#' @return The value of alphag in log form
+#' @return A list with the elements
+#' \item{rtriprime}{The p x p right triangular matrix for the propsal}
+#' \item{alpha}{A value of the function alphag in log form}
 #' @export
 #'
 #' @examples

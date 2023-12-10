@@ -1,9 +1,11 @@
 #' Calculate values in given rotation matrix
 #'
-#' @param a A number in the first entry
-#' @param b A number in the second entry
+#' @param a A number(scalar) in the first entry
+#' @param b A number(scalar) in the second entry
 #'
-#' @return The values in given rotation matrix
+#' @return A list with the elements
+#' \item{c}{The value of c in th given rotation matrix.}
+#' \item{s}{The value of s in th given rotation matrix.}
 #' @export
 #'
 #' @examples given_rotation(3, 4)

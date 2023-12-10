@@ -1,9 +1,9 @@
 #' Calculate accuracy
 #'
-#' @param beta The true vector of coefficients
-#' @param gammamat The estimated gamma
+#' @param beta A M x 1 vector represents true vector of coefficients
+#' @param gammamat A (niter+1) x M estimated gamma matrix
 #'
-#' @return The estimated accuracy
+#' @return A value represents estimated accuracy
 #' @export
 #'
 #' @examples calculate_accu(c(1,1,0), matrix(c(1,1,1,1,0,0), nrow = 2))

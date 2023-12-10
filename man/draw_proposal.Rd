@@ -9,16 +9,20 @@ draw_proposal(m, a, gam, sigma2, delta)
 \arguments{
 \item{m}{The number of trials}
 
-\item{a}{a/m is the probability draw from the first case}
+\item{a}{A value satisfies a/m is the probability draw from the first case}
 
-\item{gam}{A vector indicates whether has effect}
+\item{gam}{A M x 1 vector indicates whether covariate has effect}
 
-\item{sigma2}{The variance}
+\item{sigma2}{A value represents the variance}
 
-\item{delta}{The variance in first case}
+\item{delta}{A value represents the variance in first case}
 }
 \value{
-A propsal
+A list of elements
+\item{sigma2prime}{A number: the proposal sigma2}
+\item{gammaprime}{A M x 1 vector indicates the proposal gam}
+\item{indic}{A value indicates the case of the proposal}
+\item{indv}{A value indicates the index of the variate being changed}
 }
 \description{
 Draw proposal in each iteration of MCMC

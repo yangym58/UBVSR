@@ -7,18 +7,18 @@
 updatechol_add(rtri, sigma2, X, indvec, newv)
 }
 \arguments{
-\item{rtri}{A right triangular matrix}
+\item{rtri}{A p x p right triangular matrix}
 
 \item{sigma2}{A number: the variance of coefficient}
 
-\item{X}{The design matrix}
+\item{X}{The n x M design matrix}
 
-\item{indvec}{A vector indicates covariate}
+\item{indvec}{A p x 1 vector indicates covariate}
 
 \item{newv}{A number indicates new covariate}
 }
 \value{
-The updated right triangular matrix
+The updated p x p right triangular matrix
 }
 \description{
 Update Cholesky decomposition when adding a covariate

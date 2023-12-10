@@ -7,20 +7,20 @@
 calculate_posterior(rtri, X, Y, s, gam, sigma2)
 }
 \arguments{
-\item{rtri}{A right triangular matrix}
+\item{rtri}{A p x p right triangular matrix}
 
-\item{X}{Design matrix}
+\item{X}{A n x M Design matrix}
 
-\item{Y}{A vector of outcome}
+\item{Y}{A n x 1 vector of outcome}
 
-\item{s}{The vector of variance in each column of X}
+\item{s}{A M x 1 vector for variance in each column of X}
 
-\item{gam}{A vector indicates whether has effect}
+\item{gam}{A M x 1 vector indicates whether covariate has effect}
 
-\item{sigma2}{The variance}
+\item{sigma2}{A value represents the variance}
 }
 \value{
-The posterior in log form
+A value represents the posterior in log form
 }
 \description{
 Calculate posterior

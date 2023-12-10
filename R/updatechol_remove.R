@@ -1,10 +1,10 @@
 #' Update Cholesky Decomposition when removing a covariate
 #'
-#' @param rtri A right triangular matrix
-#' @param indvec A vector indicates the covariate
+#' @param rtri A p x p right triangular matrix
+#' @param indvec A p x 1 vector indicates the covariate
 #' @param oldv A number indicates which covariate to be removed
 #'
-#' @return The new triangular matrix
+#' @return The new p x p triangular matrix
 #' @export
 #'
 #' @examples

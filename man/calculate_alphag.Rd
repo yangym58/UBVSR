@@ -21,25 +21,25 @@ calculate_alphag(
 )
 }
 \arguments{
-\item{rtri}{A right triangular matrix}
+\item{rtri}{A p x p right triangular matrix}
 
-\item{X}{The design matrix}
+\item{X}{A n x M Design matrix}
 
-\item{Y}{A vector of outcome}
+\item{Y}{A n x 1 vector of outcome}
 
-\item{s}{A vector of variance of each column of X}
+\item{s}{A M x 1 vector for variance in each column of X}
 
-\item{indvec}{A vector indicates covariate}
+\item{indvec}{A p x 1 vector indicates covariate that have effects}
 
-\item{post}{The former posterior}
+\item{post}{A value represents the former posterior}
 
-\item{gam}{A vector indicates whether has effect}
+\item{gam}{A M x 1 vector indicates whether covariate has effect}
 
-\item{gammaprime}{The proposal gammar}
+\item{gammaprime}{A M x 1 represents the proposal gamma}
 
-\item{sigma2}{The variance}
+\item{sigma2}{A value represents the variance}
 
-\item{sigma2prime}{Th proposal variance}
+\item{sigma2prime}{A value represents proposal variance}
 
 \item{indic}{A number indicates which case}
 
@@ -48,7 +48,9 @@ calculate_alphag(
 \item{g}{A number indicates which balance function}
 }
 \value{
-The value of alphag in log form
+A list with the elements
+\item{rtriprime}{The p x p right triangular matrix for the propsal}
+\item{alpha}{A value of the function alphag in log form}
 }
 \description{
 Calculate alphag

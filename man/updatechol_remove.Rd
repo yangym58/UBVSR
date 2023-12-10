@@ -7,14 +7,14 @@
 updatechol_remove(rtri, indvec, oldv)
 }
 \arguments{
-\item{rtri}{A right triangular matrix}
+\item{rtri}{A p x p right triangular matrix}
 
-\item{indvec}{A vector indicates the covariate}
+\item{indvec}{A p x 1 vector indicates the covariate}
 
 \item{oldv}{A number indicates which covariate to be removed}
 }
 \value{
-The new triangular matrix
+The new p x p triangular matrix
 }
 \description{
 Update Cholesky Decomposition when removing a covariate

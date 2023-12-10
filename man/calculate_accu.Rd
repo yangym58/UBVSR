@@ -7,12 +7,12 @@
 calculate_accu(beta, gammamat)
 }
 \arguments{
-\item{beta}{The true vector of coefficients}
+\item{beta}{A M x 1 vector represents true vector of coefficients}
 
-\item{gammamat}{The estimated gamma}
+\item{gammamat}{A (niter+1) x M estimated gamma matrix}
 }
 \value{
-The estimated accuracy
+A value represents estimated accuracy
 }
 \description{
 Calculate accuracy
