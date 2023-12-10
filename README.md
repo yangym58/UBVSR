@@ -4,7 +4,7 @@ Bayesian variable selection regression (BVSR) is able to jointly analyze genome-
 
 ## Installation
 ```{r eval = FALSE}
-devtools::install_github("yangym58/UBVSR")
+devtools::install_github("yangym58/UBVSR", build_vignettes = TRUE)
 ```
 
 ## Usage

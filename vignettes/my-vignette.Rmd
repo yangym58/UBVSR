@@ -21,7 +21,7 @@ One can implement the BVSR combined with Cholesky decomposition or use the Chole
 ## Installation
 One can install this package form github:
 ```{r eval=F}
-devtools::install_github("yangym58/UBVSR")
+devtools::install_github("yangym58/UBVSR", build_vignettes = TRUE)
 ```
 
 ## Quick examples
